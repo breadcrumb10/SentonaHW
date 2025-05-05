@@ -1,7 +1,7 @@
 import java.io.IOException;
 import java.util.*;
 
-class ClientExecutor extends Thread {
+class ClientExecutor {
 
 
     //Main thread
@@ -13,7 +13,7 @@ class ClientExecutor extends Thread {
         Thread client_thread = new Thread(ftw);
         client_thread.start();
 
-        while (ftw.isRunning()) {
+        while (ftw.IsRunning()) {
 
             System.out.println("\t\t-What would you like to do?-");
             System.out.println();

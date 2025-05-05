@@ -2,7 +2,7 @@ import java.io.IOException;
 import java.net.*;
 import java.io.*;
 
-public class PrinterClient implements Runnable {
+public class PrinterClient implements IClientServerable {
 
     private final String host;
     private final int port;
@@ -14,7 +14,8 @@ public class PrinterClient implements Runnable {
         this.is_running=true;
     }
 
-    public boolean isRunning(){
+    @Override
+    public boolean IsRunning() {
         return is_running;
     }
 
@@ -43,8 +44,6 @@ public class PrinterClient implements Runnable {
                     s.close();
                 }
             }
-        } catch (UnknownHostException e) {
-            throw new RuntimeException(e);
         } catch (IOException e) {
             throw new RuntimeException(e);
         } finally {

@@ -13,11 +13,12 @@ public class ServerExecutor {
         boolean prompt = true;
         Scanner Scantastic = new Scanner(System.in);
 
-        StringServer wtf = new StringServer(4999,"*bang*");
+        StringServer wtf = new StringServer("*bang*",4999);
         Thread server_thread = new Thread(wtf);
         server_thread.start();
 
-        while (wtf.isRunning()) {
+
+        while (wtf.IsRunning()) {
             prompt = true;
             while (prompt == true) {
                 System.out.println("\t\t-What would you like to do?-");
@@ -46,6 +47,8 @@ public class ServerExecutor {
                 }
             }
         }
+
+
     }
 
 

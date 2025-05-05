@@ -2,19 +2,20 @@ import java.io.IOException;
 import java.net.*;
 import java.io.*;
 
-public class StringServer implements Runnable{
+public class StringServer implements IClientServerable{
 
     private final String send_me;
     private final int port;
     private boolean is_running;
 
-    StringServer(int port, String send_me) {
+    StringServer(String send_me,int port) {
         this.port=port;
         this.send_me=send_me;
         this.is_running = true;
     }
 
-    public boolean isRunning (){
+    @Override
+    public boolean IsRunning() {
         return is_running;
     }
 
