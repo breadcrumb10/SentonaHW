@@ -14,17 +14,27 @@ public static void main(String[] args) {
 
     Thread exec_thread = null;
 
-    int choice1 = Scantastic.nextInt();
-    switch (choice1){
-        case 1:
-            exec_thread = new Thread(wtf);
-            break;
-        case 2:
-            exec_thread = new Thread(ftw);
-            break;
-        default:
-            break;
+    System.out.println("\t\t-What would you like to do?-");
+    System.out.println();
+    System.out.println("\t{1: Run a Server\t2: Run a Client}");
+
+    while (prompt == true){
+        int choice1 = Scantastic.nextInt();
+        switch (choice1){
+            case 1:
+                exec_thread = new Thread(wtf);
+                prompt = false;
+                break;
+            case 2:
+                exec_thread = new Thread(ftw);
+                prompt = false;
+                break;
+            default:
+                break;
+        }
     }
+
+
 
     exec_thread.start();
 
